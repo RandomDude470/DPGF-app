@@ -1,0 +1,56 @@
+@use  '../../../assets/GlobalVars' as vars;
+@use '../../../assets/mixins' as mixins;
+ 
+form{
+    @include mixins.flex-ver ;
+    margin-inline: auto;
+    align-items: center;
+    justify-items: center;
+    box-sizing: border-box;
+    max-width: 30vw;
+    min-width: 440px;
+    row-gap: 1rem;
+    border: solid 1px lighten($color: vars.$color-primary, $amount: 20);
+    border-radius: 30px;
+    padding-inline: 1rem ;
+    padding-block:2rem ;
+    box-shadow: -6px -4px 0px 0px;
+    
+
+    h3{
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: darken($color: vars.$color-primary, $amount: 29);
+        margin-bottom: 3rem ;
+        
+    }
+    button{
+        @include mixins.button(vars.$color-primary,vars.$color-secondary,1.3rem,3rem,.2rem);
+        
+    }
+
+    div{
+        @include mixins.flex-hor ;
+        width: 100%;
+        justify-content: space-between;
+
+        label{
+            margin-block: auto;
+            text-align: left;
+            color: darken($color: vars.$color-primary, $amount: 29)
+        }
+        input{
+            height: 2rem;
+            width: 70%;
+            padding-block: .3rem;
+            padding-inline: .8rem;
+            border: solid lighten($color: vars.$color-primary, $amount: 34) 1px;
+            border-radius: 2000px;
+        }
+        input::placeholder{
+            color: rgb(221, 221, 221);
+        }
+        
+    }
+}
+

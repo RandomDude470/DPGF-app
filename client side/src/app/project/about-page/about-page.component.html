@@ -1,0 +1,25 @@
+<div class="test">
+  <div class="container">
+    <a routerLink="/home/projects/list"  >&lt;- Go back</a>
+    <div class="upper">
+      <div class="left">
+        <img src="../../../assets/project.png" alt="">
+      </div>
+      <div class="right">
+        <p class="label"><span>name : </span>{{projectInfo.name}}</p>
+        <p class="label"><span>surface :</span> {{projectInfo.surface}}</p>
+        <p class="label"><span>adresse :</span> {{projectInfo.adresse}}</p>
+      </div>
+    </div>
+    <div class="lower">
+        <div class="action" *ngIf="!dpgf" [routerLink]="'/dpgf/'+id">
+            <img src="../../../assets/img.png" alt="">
+            <p> <b> Créer Un DPGF</b></p>
+        </div>
+        <div class="action" *ngIf="dpgf">
+            <img src="../../../assets/img.png" [routerLink]="'/dpgf/'+id" alt="">
+            <p> <b> Consulter mon DPGF</b></p>
+        </div>
+    </div>
+  </div>
+</div>

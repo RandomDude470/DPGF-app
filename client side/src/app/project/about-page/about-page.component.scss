@@ -1,0 +1,92 @@
+@use "../../../assets/mixins" as mix;
+@use "../../../assets/GlobalVars" as vars;
+
+.test {
+  display: block;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: vars.$color-background;
+  @include mix.flex-ver;
+  justify-content: center;
+  align-items: center;
+  .container {
+    @include mix.flex-ver;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 70vw;
+    padding-inline: 2vw;
+    padding-block: 3vh;
+    gap: clamp(10px, 1vw, 50px);
+    a{
+        width: 100%;
+        box-sizing: border-box;
+        text-align: start;
+    }
+    .upper {
+      box-sizing: border-box;
+      width: 100%;
+      flex-grow: 1;
+      gap: clamp(10px, 1vw, 50px);
+      @include mix.flex-hor;
+      .left {
+        box-sizing: border-box;
+        flex-grow: 1;
+        padding: 0.4vw;
+        @include mix.round-box;
+        @include mix.flex-ver;
+        justify-content: center;
+        align-items:  center;
+        img{
+            height: 140px;
+            box-sizing: border-box
+        }
+
+      }
+      .right {
+        @include mix.flex-ver;
+        @include mix.round-box;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 0.4vw;
+        padding-left: 2rem;
+        flex-grow: 2;
+        gap: 1rem;
+        .label {
+          text-transform: capitalize;
+          span {
+            color: #9f9e9d;
+          }
+        }
+        .value {
+          box-sizing: border-box;
+          padding-left: 7rem;
+        }
+      }
+    }
+    .lower {
+      @include mix.round-box;
+      box-sizing: border-box;
+      width: 100%;
+      flex-grow: 2;
+      @include mix.flex-hor;
+      justify-content: center;
+      align-items: center;
+      .action {
+        cursor: pointer;
+        width : min(30% , 210px);
+        @include mix.flex-ver;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        height: clamp(70%,70%,80%);
+        @include mix.round-box;
+        border-color: black;
+        box-sizing: border-box;
+        img{
+            height: 100px;
+        }
+      }
+    }
+  }
+}

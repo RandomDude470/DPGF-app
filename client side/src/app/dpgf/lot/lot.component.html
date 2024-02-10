@@ -1,0 +1,18 @@
+<div class="test">
+        <div class="container">
+            <a (click)="exit.emit()">&lt;- Go Back</a>
+            <div class="header">
+                <input class="name" (change)="UpdateName()" spellcheck="false" [formControl]="name" value="{{Lot.name}}">
+                <button type="button" (click)="AddSousLot()">+ Add Section</button>
+                
+            </div>
+            <div class="main">
+                <div class="souslot" *ngFor="let souslot of Lot.sousLots" >
+                    <app-sous-lot  *ngIf="Lot.sousLots.length != 0"  [SousLot]="souslot" (notify)="OnNotify($event)"></app-sous-lot>
+                </div>
+            </div>
+            <div class="add">
+                <span>total : {{Total}}€</span>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container" >
+  <div
+    *ngFor="let lot of lotList; index as i"
+    class="panel"
+    (click)="OnClick(lot['_id'])"
+  >
+    <div class="pill">
+      <span><span class="colored" [style]="'color : ' + colors[i]">{{ i }}</span>{{ "- " + lot['name'] }}</span> 
+       <span class="total"> {{ lot['total'] }} €</span>
+    </div>
+  </div>
+  <div class="panel total">
+    <div class="pill total">
+      <span class="label">Total : </span>
+      <span class="value">{{ Total }}€ TTC</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+@use '/src/assets/GlobalVars' as vars;
+@use '/src/assets/mixins' as mix;
+
+.header{
+    $text-color : rgb(98, 98, 98);
+    $bg_color : rgb(236, 240, 248);
+    background-color: $bg_color;
+    color: $text-color;
+    font-size: 20px;
+    display: flex;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    border-radius: 5px;
+    input{
+        padding: 4px;
+        border-radius: 10px;
+        border: none;
+        background-color: lighten($bg_color,0);
+        font: inherit;
+        font-weight: 600;
+        font-size: 22px;
+        color: inherit;
+        text-transform: capitalize;
+        &:hover{
+            background-color: lighten($bg_color,4);
+
+        }
+        &:focus{
+            outline: none;
+            border-bottom: lighten(vars.$color-primary,10) solid 2px;
+            
+        }
+    }
+}
+
+table{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    box-sizing: border-box;
+    
+}
+thead{
+    background-color: #6a3c91;
+    color: vars.$color-secondary;
+    height: 2rem;
+    
+}
+
+#newrow{
+    color: vars.$color-primary;
+    background-color: vars.$color-secondary;
+    border: vars.$color-primary solid 1px;
+    padding-block: .2rem;
+    border-radius : 10px;
+    margin-top: 5rem;
+    text-align: center;
+    transition : background-color .3s;
+    cursor: pointer;
+    &:hover{
+        color: vars.$color-secondary;
+        background-color: vars.$color-primary;
+    }
+}
+th{
+    padding-inline:.3rem ;
+    text-transform : capitalize;
+    border-radius: 5px;
+}

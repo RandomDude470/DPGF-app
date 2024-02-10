@@ -1,0 +1,9 @@
+app-login{
+    display: block;
+    height: 100%;
+}
+router-outlet ~ *{
+    background-color: cadetblue;
+    display: block;
+    height: 100%;
+}

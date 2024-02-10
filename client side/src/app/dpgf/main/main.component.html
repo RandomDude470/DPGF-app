@@ -1,0 +1,18 @@
+<div class="test">
+    <div class="save" (click)="Save()"> <span *ngIf="!saving">🖫 Enregistrer</span> <span *ngIf="saving"> Saving ...</span></div>
+    <div class="leave" [routerLink]="'/home/projects/about/'+ProjectId"> &lt;- Retour</div>
+    <div class="container">
+
+        <div class="left">
+            <app-nav [LotList]="LotList" (notify)="OnNotifyNav($event)" (addLot)="AddNewLot()"></app-nav>
+        </div>
+        <div class="right" >
+            
+            <app-default-screen *ngIf=" isArray(LotList) && LotList.length != 0 && showDefault" [lotList]="LotList " (notify)="OnNotifyDefaulrScreen($event) "></app-default-screen>
+            <app-lot *ngIf="DPGF && isArray(DPGF.lots) && DPGF.lots.length != 0  && !showDefault" [Lot]="fetchLotByIdAndDisplay(CurrentLot)" (notify)="OnNotifyLot($event)" (exit)="showDefault= true"></app-lot>
+            
+        </div>
+
+        
+    </div>
+</div>

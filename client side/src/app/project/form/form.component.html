@@ -1,0 +1,13 @@
+<form (submit)="OnSubmit() ">
+    <a *ngIf="formType == 'projects'" routerLink="/home/project/list">&lt;-- Go Back </a>
+    <h3>{{title}}</h3>
+    <div *ngFor="let field of formInputs[formType]; index as  i">
+        <label for="{{field[0]}}">{{field[0]+' :'}} </label>
+        <input type="{{field[1]}}" name="{{field[0]}}" [formControl]="form.controls[i]" placeholder="{{field[0]+'...'}}"/>
+    </div>
+   
+    <p *ngIf="emptyFields" style="color:red">All fields are required</p>
+    <p *ngIf="error" style="color:red">{{error}}</p>
+    <button type="button" (click)="OnClickAddField()">add new field</button>
+    <button type="submit">{{button}}</button>
+</form>

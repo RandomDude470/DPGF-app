@@ -1,0 +1,54 @@
+@use './GlobalVars' as vars;
+
+@mixin flex-hor {
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex-ver{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-ver-cen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-hor-cen{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+@mixin margin-auto-center {
+    display : block;
+    margin-inline : auto;
+}
+@mixin button($pr , $sec,$font-size , $padding-inline, $padding-block) {
+    color : $sec;
+    background-color: lighten($color: $pr , $amount: 13);
+    padding-inline: $padding-inline;
+    padding-block: $padding-block;
+    border: none;
+    border-radius : 20px;
+    font-size : $font-size ;
+    font-weight: 500;
+    box-shadow: 1px $pr;
+    margin-top: 4rem;
+    border: solid 1px $sec;
+    cursor: pointer;
+    transition: background-color .3s;
+    &:hover{
+        background-color: $sec;
+        color: lighten($color: $pr , $amount: 13);
+        border: solid 1px lighten($color: $pr, $amount: 20);
+
+    }
+}
+@mixin round-box {
+    border: solid 1px lighten($color: vars.$color-primary, $amount: 20);
+    border-radius: 30px;
+    padding-inline: 1rem ;
+    padding-block:2rem ;
+    background-color: white;
+}

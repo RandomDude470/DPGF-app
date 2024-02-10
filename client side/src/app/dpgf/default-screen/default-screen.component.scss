@@ -1,0 +1,54 @@
+@use '../../../assets/GlobalVars' as v;
+@use '../../../assets/mixins' as m;
+
+$transition : .3s;
+
+.container{
+    height: 100%;
+    row-gap: 1.4rem;
+    @include m.flex-ver;
+    .panel{
+        border-radius: 10px;
+        background-color: #f2f3f7;
+        padding: 1.2rem 1rem;
+        font-size: 1.5rem;
+        transition: color $transition , background-color $transition;
+        &:hover .colored{
+            color: white !important;
+            // transition: color,background-color 0.3s;
+            
+        }
+        &:hover:not(.total){
+            cursor: pointer;
+            background-color: black;
+            color: white !important;
+         }
+        &:active .colored{
+            color: black !important;
+            // transition: color,background-color 0.3s;
+            
+        }
+        &:active:not(.total){
+            cursor: pointer;
+            background-color: white;
+            color: black !important;
+         }
+        .colored{
+            display: inline-block;
+            transition: color $transition ;
+            width: 20px;
+        }
+       
+        .total{
+            @include m.flex-hor ;
+            justify-content: space-between;
+            font-weight: 500;
+            color : gray ;
+        }
+        .pill{
+            @include m.flex-hor;
+            justify-content: space-between;
+            text-transform  : capitalize;
+        }
+    }
+}

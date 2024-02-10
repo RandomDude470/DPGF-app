@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="header">
+    <input spellcheck="false" type="text" [formControl]="name" (blur)="OnBlur()" /><span
+      >Total : {{ SousLot.total }} €</span
+    >
+  </div>
+  <table>
+    <thead>
+      <th>Designation</th>
+      <th>qte</th>
+      <th>unit</th>
+      <th>tva</th>
+      <th>prix unitaire</th>
+      <th>Total</th>
+    </thead>
+    <tbody>
+      <div *ngIf="isReady(SousLot)" style="display: contents">
+        <app-post *ngFor="let post of SousLot.posts" [Post]="post" (notify)="OnNotify($event)" style="display: contents"></app-post>
+      </div>
+      <tr>
+        <td id="newrow" colspan="6" (click)="OnClick()">+ Nouveau poste</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

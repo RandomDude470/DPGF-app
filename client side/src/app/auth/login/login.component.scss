@@ -1,0 +1,8 @@
+@use "../../../assets/mixins" as mixins;
+@use "../../../assets/GlobalVars" as vars;
+
+div {
+  @include mixins.flex-ver;
+  height: 100%;
+  justify-content: center;
+}

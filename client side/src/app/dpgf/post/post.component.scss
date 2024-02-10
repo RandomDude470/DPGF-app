@@ -1,0 +1,21 @@
+@use '/src/assets/GlobalVars' as vars;
+
+td{
+    
+    box-sizing: border-box;
+    padding-block : .5rem ;
+    padding-inline: .4rem;
+}
+input{
+    box-sizing: border-box;
+    border: none;
+    border-bottom: solid gray 1px;
+    width: 100%;
+    padding: .2rem;
+    font-size: 18px;
+    &:focus{
+        outline: none;
+        border-bottom: lighten(vars.$color-primary,10) solid 2px;
+        
+    }
+}

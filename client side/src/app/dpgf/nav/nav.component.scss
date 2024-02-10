@@ -1,0 +1,43 @@
+@use "/src/assets/mixins" as mix;
+@use "/src/assets/GlobalVars" as vars;
+
+.container {
+  
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  @include mix.flex-ver-cen;
+  justify-content: flex-start;
+  padding-inline: 0.5rem;
+  padding-block: 1.5rem;
+  row-gap: 4%;
+  overflow-y: auto;
+  div {
+    @include mix.flex-hor;
+    box-sizing: border-box;
+    width: 100%;
+
+    button {
+
+        text-transform: capitalize;
+        width: 100%;
+        box-sizing: border-box;
+        @include mix.button(white, black, 1.2rem, 5px, 10px);
+        margin: 0;
+        text-align: start;
+        padding-inline-start: 2rem;
+        display: flex;
+        align-items: center;
+        transition : background-color 0.3s;
+        &:active{
+          background-color: white;
+          color: black !important;
+        }
+        img {
+          height: 1.2rem;
+          margin-right : 5px;
+        }
+
+    }
+  }
+}

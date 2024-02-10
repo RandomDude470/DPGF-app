@@ -1,0 +1,56 @@
+@use '../../../assets/mixins' as mix ;
+@use '../../../assets/GlobalVars' as vars ;
+
+.test{
+    height: 100vh;
+    @include mix.flex-hor-cen;
+    background-color: vars.$color-background ;
+    .save , .leave{
+        @include mix.button(vars.$color-primary,white,1.2rem,1.5rem,.3rem);
+        position: absolute;
+        top: -3rem;
+        right: 2rem;
+        &:active{
+            
+            background-color: darken(white,10);
+        }
+    }
+    .leave{
+        right: auto;
+        left: 2rem;
+    }
+    .container{
+        @include mix.flex-hor-cen;
+        height: 83%;
+        width: 75%;
+        gap: 5%;
+        .right{
+            @include mix.round-box;
+            flex-grow: 2.5;
+            height: 100%;
+            min-width: 16rem;
+            box-sizing: border-box;
+            max-width: 900px;
+            overflow-y : auto;
+            
+           // background-color: vars.$color-primary;
+            
+        }
+        .left{
+            @include mix.round-box;
+            min-width: 8rem;
+            max-width: 350px;
+            flex-grow: 1;
+            height: 100%;
+            box-sizing: border-box;
+         //   background-color: blue;
+            app-nav{
+                width: 50%;
+            }
+    
+        }
+    }
+
+
+
+}

@@ -1,0 +1,26 @@
+<div class="test loading" *ngIf="loader">
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+</div>
+<div class="test" *ngIf="!loader">
+    <h2>{{title}}</h2>
+    <div class="container">
+        <div *ngFor="let project of projectList" class="project-container" >
+            <div class="img" routerLink="{{'/home/projects/about/'+project['_id']}}">
+                <img class="img-project" src="../../../assets/project.png" alt="">
+            </div>
+            <div class="project" routerLink="{{'/home/projects/about/'+project['_id']}}">
+                <p><b>{{project["name"]}}</b></p>
+            </div>
+            <div class="delete" (click)="DeleteProject(project['_id'])">❌</div>
+        </div>
+        <div  class="project-container clickable" routerLink="/home/projects/add">
+            <div class="img">
+                <img src="../../../assets/img.png" alt="">
+            </div>
+            <div class="project">
+                <p>Add new</p>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+@use  '../../../assets/GlobalVars' as vars;
+@use  '../../../assets/mixins' as mix;
+
+.test{
+    @include mix.flex-ver;
+    background-color: vars.$color-background;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+// .scrollable{
+//     overflow-y: auto;
+//     max-height: 75vh;
+//     padding : 50px;
+//     padding-inline : 50px;
+//     border : solid black 1px;
+//     border-radius : 20px;
+// }

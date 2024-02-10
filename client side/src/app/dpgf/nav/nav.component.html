@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngFor="let lot of LotList; index as i">
+    <button (click)="OnClick(lot['_id'])" type="button">
+      <span [style]="'color : ' + colors[i]">{{ i }}</span
+      >{{ "- " + lot['name'] }}
+    </button>
+  </div>
+  <div >
+    <button (click)="AddnewLot()" type="button">
+      + Ajouter Nouveau Lot
+    </button>
+  </div>
+</div>
